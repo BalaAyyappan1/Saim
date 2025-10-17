@@ -6510,12 +6510,26 @@ figcaption {
     color: #00ffbf;
   }
 
-  .original-price {
-    font-size: 0.9rem;
-    color: #888;
-    text-decoration: line-through;
-    
-  }
+.original-price {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.price-strike {
+  color: #888;
+   font-size: 0.90em;
+
+
+  text-decoration: line-through;
+}
+
+.price-note {
+  color: #009A84; /* choose your highlight color */
+  text-decoration: none;
+  font-size: 0.90em;
+  margin-left: 1px;
+}
+
 
   .review ul {
     list-style: none;
@@ -7169,6 +7183,28 @@ figcaption {
   height: 800px;
   display: flex;
 }
+
+
+.original-price {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.price-strike {
+  color: #888;
+   font-size: 0.95em;
+
+
+  text-decoration: line-through;
+}
+
+.price-note {
+  color: #009A84; /* choose your highlight color */
+  text-decoration: none;
+  font-size: 0.95em;
+  margin-left: 1px;
+}
+
 
 
   .heading-hero.large {
