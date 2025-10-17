@@ -1,18 +1,57 @@
-const modal = document.getElementById("formModal");
-const btn = document.getElementById("contactBtn");
-const closeBtn = document.querySelector(".close");
+const modal = document.getElementById("contactModal");
+const closeBtn = modal.querySelector(".close");
+const form = modal.querySelector("#contactForm");
+const successMsg = modal.querySelector("#successMsg");
+const submitBtn = form.querySelector("button[type='submit']");
 
-btn.onclick = function () {
-  modal.style.display = "flex";
-};
+// Open modal
+document.querySelectorAll(".contactBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    modal.style.display = "block";
+    successMsg.style.display = "none";
+  });
+});
 
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
+// Close modal
+closeBtn.addEventListener("click", () => modal.style.display = "none");
 
-// Close when clicking outside the modal content
-window.onclick = function (event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
+// Close modal on clicking outside
+window.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+// Submit form
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = form.elements["email"].value;
+  const timestamp = new Date().toISOString();
+
+  // Loading state
+  submitBtn.disabled = true;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = "Submitting...";
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbyii1b6DSiobC_IjeN1AW5UYo7ZeIUTkPjldDVA7z57tAbSjWpc9xjX0KnmqwnlOpzLkA/exec", {
+      method: "POST",
+      mode: "no-cors", // required for Apps Script if CORS not enabled
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, timestamp })
+    });
+
+    // Success (can't read response in no-cors, so assume success)
+    form.reset();
+    successMsg.style.color = "green";
+    successMsg.textContent = "Submitted successfully!";
+    successMsg.style.display = "block";
+  } catch (err) {
+    successMsg.style.color = "red";
+    successMsg.textContent = "Error submitting form. Try again!";
+    successMsg.style.display = "block";
+    console.error(err);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
   }
-};
+});

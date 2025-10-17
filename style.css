@@ -6245,7 +6245,7 @@ figcaption {
 }
 
 
-.review, .content-wrapper, .wrapper {
+.review,  .wrapper {
   position: relative;
   text-align: center;
 }
@@ -6286,7 +6286,7 @@ figcaption {
   .price {
     font-size: 2rem;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 0px 0;
     color: #00ffbf;
   }
 
@@ -6350,6 +6350,81 @@ figcaption {
     background-color: #00d1a7;
   }
 
+  .billing-pill-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: #111; /* dark background for the pill */
+  border-radius: 50px;
+  padding: 5px;
+  gap: 10px;
+  font-family: sans-serif;
+  user-select: none;
+  margin-top: 5%;
+}
+
+.billing-option {
+  color: #aaa;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.billing-option.annual {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #aaa;
+}
+
+.save-tag {
+  background-color: #009a84; /* green tag */
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.pill-switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  display: inline-block;
+}
+
+.pill-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.pill-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #009a84; /* green when checked */
+  border-radius: 50px;
+  transition: 0.4s;
+}
+
+.pill-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.pill-switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+
   .review p.description {
     font-size: 0.85rem;
     color: #888;
@@ -6358,68 +6433,83 @@ figcaption {
 
 
 
- /* Modal background */
+ 
+
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
+  display: none; /* Hidden by default */
+  position: fixed; 
+  z-index: 1000; 
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); /* Semi-transparent */
 }
 
-/* Modal box */
+/* Modal Box */
 .modal-content {
-  background-color: #fff;
-  padding: 25px 30px;
+  background-color: #022626;
+  border:#009A84;
+  margin: 10% auto; /* Center vertically & horizontally */
+  padding: 20px;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
   position: relative;
 }
 
-/* Close button (×) */
+/* Close Button */
 .close {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 22px;
+  color: #aaa;
+  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* Form styling */
-form {
+.close:hover {
+  color: #00FFBF;
+}
+
+/* Form Styling */
+#contactForm {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-form input,
-form textarea {
+#contactForm input {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #009A84; /* match accent color */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #033434; /* slightly lighter than modal */
+  color: #fff; /* white text */
 }
 
-form button {
-  background-color: #007bff;
-  color: white;
+#contactForm input::placeholder {
+  color: #b5b5b5; /* lighter placeholder text */
+}
+
+#contactForm button {
   padding: 10px;
+  font-size: 16px;
+  background-color: #111;
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 500;
 }
 
-form button:hover {
-  background-color: #0056b3;
+#contactForm button:hover {
+  background-color: #333;
 }
 
 
@@ -6799,6 +6889,12 @@ form button:hover {
     backdrop-filter: none;
   }
 
+
+  .about-us{
+  text-align: start;
+  width: 100%;
+  font-size: 18px;
+}
   .navbar {
     padding-left: .7em;
     padding-right: .7em;
