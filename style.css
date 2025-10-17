@@ -4209,7 +4209,6 @@ figcaption {
 
 .one {
   margin-top: 35px;
-
   grid-row-gap: 1.25em;
   flex-direction: column;
   justify-content: flex-start;
@@ -6914,6 +6913,37 @@ figcaption {
     padding-top: 9em;
     padding-bottom: 4em;
   }
+
+
+ .one {
+
+  grid-row-gap: 1.25em;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 700px;
+  display: flex;
+}
+
+.two {
+  grid-row-gap: 1.25em;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 900px;
+  display: flex;
+}
+
+ .three {
+  margin-top: 3px;
+  grid-row-gap: 1.25em;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 800px;
+  display: flex;
+}
+
 
   .heading-hero.large {
     font-size: 2.6em;
