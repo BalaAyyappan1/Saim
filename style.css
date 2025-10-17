@@ -4158,24 +4158,117 @@ figcaption {
 }
 
 .grid-benefits {
-  grid-column-gap: 1.25em;
-  grid-row-gap: 1.25em;
+  grid-column-gap: 1.1em;
+  grid-row-gap: 1.1em;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 1.25em;
 }
 
-.benefit {
-  grid-row-gap: .9em;
-  border: 1px solid var(--dark-blue-3);
-  text-align: center;
-  border-radius: 1.2em;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 2em;
-  display: flex;
+.big {
+  font-size: 9em;
 }
+
+/* Grid layout */
+.grid-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+/* Individual benefit card */
+.benefit {
+  border: 1px solid var(--dark-blue-3);
+  border-radius: 1.2em;
+  text-align: center;
+  height: 200px;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: #011c1c; /* Optional: match your theme background */
+}
+
+/* Number */
+.numb {
+  font-size: 2.6em;
+  font-weight: bold;
+  color: #009A84;
+  margin-bottom: 0.3em;
+}
+
+/* Title */
+.p1 {
+  font-size: 1.2em;
+  margin: 0.4em 0;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Description */
+.p2 {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 0.2em;
+}
+
+/* Hover effect */
+.benefit:hover {
+  transform: translateY(-8px);
+  border-color: #009A84;
+  box-shadow: 0 8px 18px rgba(0, 154, 132, 0.3);
+  background-color: #012727;
+}
+
+/* Optional: smooth color change on hover */
+.benefit:hover .numb {
+  color: #00caa8;
+}
+
+.benefit:hover .p1 {
+  color: #00ffcf;
+}
+
+.benefit:hover .p2 {
+  color: #d0d0d0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .benefit {
+    height: 180px;
+    padding: 1.5em;
+  }
+
+  .numb {
+    font-size: 2.2em;
+  }
+
+  .p1 {
+    font-size: 1.1em;
+  }
+
+  .p2 {
+    font-size: 0.85em;
+  }
+}
+ 
+
+.phone-link {
+  color: #009A84; /* your theme color */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+  color: #00caa8;
+  text-decoration: underline;
+}
+
 
 .icon-benefit {
   width: 2.5em;
@@ -6432,6 +6525,11 @@ figcaption {
 
 
 
+  .paragraph-ai {
+    width: 60%;
+  }
+
+
  
 
 .modal {
@@ -6952,6 +7050,11 @@ figcaption {
   .section {
     padding-top: 3.5em;
     padding-bottom: 3.5em;
+  }
+
+
+   .paragraph-ai {
+    width: 100%;
   }
 
   .section.post {
