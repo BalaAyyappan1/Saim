@@ -4060,7 +4060,7 @@ figcaption {
 }
 
 .home-logo {
-  height: 30px; /* fixed height */
+  height: 60px; /* fixed height */
   width: auto;  /* maintain aspect ratio */
   max-width: 210px; /* prevent overly large logos */
   object-fit: contain; /* keep proportions */
@@ -4069,7 +4069,7 @@ figcaption {
 
 
 .home-logo-2 {
-  height: 34px; /* fixed height */
+  height: 49px; /* fixed height */
   width: auto;  /* maintain aspect ratio */
   max-width: 210px; /* prevent overly large logos */
   object-fit: contain; /* keep proportions */
@@ -4099,7 +4099,7 @@ figcaption {
 @media (max-width: 480px) {
   .home-logo, 
   .home-logo-2 {
-    height: 40px;
+    height: 50px;
     max-width: 120px;
   }
 }
