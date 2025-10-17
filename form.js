@@ -24,7 +24,10 @@ window.addEventListener("click", (e) => {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const name = form.elements["name"].value;
   const email = form.elements["email"].value;
+  const organization = form.elements["organization"].value;
+  const phone = form.elements["phone"].value;
   const timestamp = new Date().toISOString();
 
   // Loading state
@@ -33,11 +36,11 @@ form.addEventListener("submit", async (e) => {
   submitBtn.textContent = "Submitting...";
 
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbyii1b6DSiobC_IjeN1AW5UYo7ZeIUTkPjldDVA7z57tAbSjWpc9xjX0KnmqwnlOpzLkA/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbxM8beb7Ydq7G5DuBFhUG8QkicPDsOFYsyEgN35azyLNJxLOQeGKhxdIH55_LzqCuGi3w/exec", {
       method: "POST",
       mode: "no-cors", // required for Apps Script if CORS not enabled
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, timestamp })
+      body: JSON.stringify({ name, email, organization, phone, timestamp })
     });
 
     // Success (can't read response in no-cors, so assume success)

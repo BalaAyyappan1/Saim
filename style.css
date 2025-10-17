@@ -4042,6 +4042,69 @@ figcaption {
   margin-top: .05em;
 }
 
+.home-logo-container {
+  display: flex;
+  justify-content: start; /* center horizontally */
+  align-items: center;     /* align vertically */
+  gap: 1rem;               /* space between logos */
+  flex-wrap: wrap;         /* wrap if screen is small */
+  padding: 0.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.home-logo-container a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-logo {
+  height: 30px; /* fixed height */
+  width: auto;  /* maintain aspect ratio */
+  max-width: 210px; /* prevent overly large logos */
+  object-fit: contain; /* keep proportions */
+  display: block;
+}
+
+
+.home-logo-2 {
+  height: 34px; /* fixed height */
+  width: auto;  /* maintain aspect ratio */
+  max-width: 210px; /* prevent overly large logos */
+  object-fit: contain; /* keep proportions */
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-logo, 
+  .home-logo-2 {
+    height: 50px;
+    max-width: 150px;
+  }
+  .home-logo-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* align vertically */
+  gap: 1rem;               /* space between logos */
+  flex-wrap: wrap;         /* wrap if screen is small */
+  padding: 0.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+}
+
+@media (max-width: 480px) {
+  .home-logo, 
+  .home-logo-2 {
+    height: 40px;
+    max-width: 120px;
+  }
+}
+
+
 .block {
   z-index: 50;
   grid-row-gap: 2.2em;
